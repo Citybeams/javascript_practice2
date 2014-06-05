@@ -73,3 +73,30 @@ emailField.onblur = function() {
     emailField.value = "your email";
   }
 };
+
+// function simpleMessage() {
+//   console.log("alerting after seconds");
+// }
+// //set timeout is in milliseconds
+// setInterval(simpleMessage, 3000);
+
+
+//grabs the image in the html
+var myImage = document.getElementById("mainImage");
+
+//array with paths to images
+var imageArray = ["810Deli2.jpg", "810Deli3.jpg"];
+
+// rotates arounds the images starting at position 0 in the array
+var imageIndex = 0;
+
+function changeImage(){
+  myImage.setAttribute("src",imageArray[imageIndex]);
+  imageIndex++;
+  if (imageIndex >= imageArray.length) {
+    imageIndex = 0;
+  }
+}
+
+//calls the function changeImage every 4 seconds
+setInterval(changeImage, 4000);
